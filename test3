@@ -1,0 +1,10 @@
+import enchant
+from enchant.checker import SpellChecker
+mychecker= SpellChecker("en_US","myword.txt")
+spacedfile = "vyndaqell"
+mychecker.set_text(spacedfile)
+for err in mychecker:
+    sug = err.suggest()[0]
+    err.replace("**%s** %s" % (err.word,sug))  # Look here
+Spellchecked = mychecker.get_text()
+print (Spellchecked)
