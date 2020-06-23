@@ -1,6 +1,6 @@
 import enchant
 from enchant.checker import SpellChecker
-chkr = SpellChecker("en_UK","en_US")
+chkr = SpellChecker("en_UK","en_US","myword.txt")
 spacedfile = "This is a setence. It has speeelinng mistake."
 chkr.set_text(spacedfile)
 for err in chkr:
