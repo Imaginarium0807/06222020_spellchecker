@@ -1,0 +1,3 @@
+import enchant
+f = enchant.DictWithPWL("en_US", "myword.txt")
+f.suggest("vyndemxxx")
