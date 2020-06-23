@@ -8,3 +8,15 @@ for err in chkr:
     err.replace("**%s** %s" % (err.word, sug))  # Look here
 Spellchecked = chkr.get_text()
 print (Spellchecked)
+
+--
+import enchant
+from enchant.checker import SpellChecker
+mychecker= SpellChecker("en_US","myword.txt")
+spacedfile = "This is a setence. It has speeelinng mistake vyndaqell"
+mychecker.set_text(spacedfile)
+for err in mychecker:
+    sug = err.suggest()[0]
+    err.replace("**%s** %s" % (err.word, sug))  # Look here
+Spellchecked = chkr.get_text()
+print (Spellchecked)
