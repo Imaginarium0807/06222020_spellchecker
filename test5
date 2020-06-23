@@ -1,0 +1,12 @@
+from enchant import DictWithPWL
+from enchant.checker import SpellChecker
+import enchant
+my_dict = enchant.request_pwl_dict( "myword.txt")
+mychecker= SpellChecker(my_dict)
+spacedfile = "vyndemaxx biosimilardd  tafamidiss tafemedis tefadamis tafamedisss is the best solution"
+mychecker.set_text(spacedfile)
+for err in mychecker:
+    sug = err.suggest()
+    err.replace("**%s** %s" % (err.word,sug))  # Look here
+Spellchecked = mychecker.get_text()
+print (Spellchecked)
